@@ -1,0 +1,6 @@
+{
+  "parent": "cobblemon:item/hyper_potion",
+  "textures": {
+    "layer1": "unimplemented_items:item/old"
+  }
+}

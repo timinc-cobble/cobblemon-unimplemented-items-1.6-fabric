@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unimplemented_items:ability_patch"
+    }
+  ],
+  "result": {
+    "item": "cobblemon:ability_patch",
+    "count": 1
+  }
+}

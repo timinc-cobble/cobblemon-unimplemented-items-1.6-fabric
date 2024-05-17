@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unimplemented_items:ability_capsule"
+    }
+  ],
+  "result": {
+    "item": "cobblemon:ability_capsule",
+    "count": 1
+  }
+}

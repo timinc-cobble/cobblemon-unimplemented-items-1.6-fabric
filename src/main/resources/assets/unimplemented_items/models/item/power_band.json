@@ -1,0 +1,6 @@
+{
+  "parent": "cobblemon:item/power_band",
+  "textures": {
+    "layer1": "unimplemented_items:item/old"
+  }
+}
