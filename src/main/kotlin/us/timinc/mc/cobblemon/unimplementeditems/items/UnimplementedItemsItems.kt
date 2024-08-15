@@ -42,7 +42,7 @@ object UnimplementedItemsItems {
     val POWER_LENS = Item(FabricItemSettings())
     val POWER_BAND = Item(FabricItemSettings())
     val POWER_ANKLET = Item(FabricItemSettings())
-    val ABILITY_PATCH = Item(FabricItemSettings())
+    val ABILITY_PATCH = AbilityPatch()
     val ABILITY_CAPSULE = Item(FabricItemSettings())
 
     fun register() {
