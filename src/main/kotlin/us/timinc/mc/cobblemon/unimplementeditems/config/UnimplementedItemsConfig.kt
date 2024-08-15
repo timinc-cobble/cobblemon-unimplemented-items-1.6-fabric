@@ -5,6 +5,7 @@ import net.minecraft.loot.LootTables
 import net.minecraft.util.Identifier
 
 class UnimplementedItemsConfig {
+    val abilityPatchGen9: Boolean = true
     val lootPoolOverrides: List<Identifier> = listOf(
         LootTables.FISHING_TREASURE_GAMEPLAY,
         Blocks.GRASS.lootTableId

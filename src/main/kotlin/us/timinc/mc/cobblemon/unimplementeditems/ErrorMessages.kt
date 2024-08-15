@@ -10,4 +10,6 @@ object ErrorMessages {
     val alreadyPerfectIv by lazy { buildErrorMessage("alreadyPerfectIv") }
     val alreadyPerfectIvs by lazy { buildErrorMessage("alreadyPerfectIvs") }
     val alreadyHasZeroEvs by lazy { buildErrorMessage("alreadyHasZeroEvs") }
+    val noHiddenAbility by lazy { buildErrorMessage("noHiddenAbility") }
+    val alreadyHasHiddenAbility by lazy { buildErrorMessage("alreadyHasHiddenAbility") }
 }
