@@ -1,6 +1,7 @@
 package us.timinc.mc.cobblemon.unimplementeditems
 
 import com.cobblemon.mod.common.api.events.CobblemonEvents
+import com.cobblemon.mod.common.api.spawning.spawner.PlayerSpawnerFactory
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
@@ -8,6 +9,7 @@ import us.timinc.mc.cobblemon.unimplementeditems.blocks.UnimplementedItemsBlocks
 import us.timinc.mc.cobblemon.unimplementeditems.blocks.UnimplementedItemsBlocks.REPEL
 import us.timinc.mc.cobblemon.unimplementeditems.config.ConfigBuilder
 import us.timinc.mc.cobblemon.unimplementeditems.config.UnimplementedItemsConfig
+import us.timinc.mc.cobblemon.unimplementeditems.influences.ShinyCharm
 import us.timinc.mc.cobblemon.unimplementeditems.items.PostBattleItem
 import us.timinc.mc.cobblemon.unimplementeditems.items.UnimplementedItemsItems
 
@@ -18,6 +20,8 @@ object UnimplementedItems : ModInitializer {
     override fun onInitialize() {
         UnimplementedItemsItems.register()
         UnimplementedItemsBlocks.register()
+
+        PlayerSpawnerFactory.influenceBuilders.add(::ShinyCharm)
 
         CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { event ->
             val spawned = event.entity

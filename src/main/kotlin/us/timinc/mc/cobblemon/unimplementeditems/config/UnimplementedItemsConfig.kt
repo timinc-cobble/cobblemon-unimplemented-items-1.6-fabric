@@ -10,4 +10,5 @@ class UnimplementedItemsConfig {
         LootTables.FISHING_TREASURE_GAMEPLAY,
         Blocks.GRASS.lootTableId
     )
+    val shinyCharmBonusRolls: Int = 2
 }

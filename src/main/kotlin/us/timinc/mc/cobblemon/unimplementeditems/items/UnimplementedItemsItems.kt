@@ -44,6 +44,7 @@ object UnimplementedItemsItems {
     val POWER_ANKLET = Item(FabricItemSettings())
     val ABILITY_PATCH = AbilityPatch()
     val ABILITY_CAPSULE = Item(FabricItemSettings())
+    val SHINY_CHARM = Item(FabricItemSettings())
 
     fun register() {
         LootTableEvents.MODIFY.register(LootTableEvents.Modify { _: ResourceManager, _: LootManager, id: Identifier, tableBuilder: LootTable.Builder, source: LootTableSource ->
@@ -79,6 +80,7 @@ object UnimplementedItemsItems {
             content.add(POWER_LENS)
             content.add(POWER_BRACER)
             content.add(POWER_WEIGHT)
+            content.add(SHINY_CHARM)
         }
 
         Registry.register(
@@ -129,6 +131,7 @@ object UnimplementedItemsItems {
         Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_anklet"), POWER_ANKLET)
         Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("ability_patch"), ABILITY_PATCH)
         Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("ability_capsule"), ABILITY_CAPSULE)
+        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("shiny_charm"), SHINY_CHARM)
 
         FuelRegistry.INSTANCE.add(DRY_ROOT, 100)
         CompostingChanceRegistry.INSTANCE.add(DRY_ROOT, 0.3F)
