@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:power_band"
+      "item": "unimplemented_items:potion_hyper"
     }
   ],
   "result": {
-    "item": "cobblemon:power_band",
+    "id": "cobblemon:hyper_potion",
     "count": 1
   }
 }

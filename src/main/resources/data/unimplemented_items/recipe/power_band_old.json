@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:power_belt"
+      "item": "unimplemented_items:power_band"
     }
   ],
   "result": {
-    "item": "cobblemon:power_belt",
+    "id": "cobblemon:power_band",
     "count": 1
   }
 }

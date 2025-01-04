@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:power_lens"
+      "item": "unimplemented_items:elixir"
     }
   ],
   "result": {
-    "item": "cobblemon:power_lens",
+    "id": "cobblemon:elixir",
     "count": 1
   }
 }

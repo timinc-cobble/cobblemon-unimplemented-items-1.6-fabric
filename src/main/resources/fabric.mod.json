@@ -1,12 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "cobblemon_unimplementeditems",
-  "version": "1.5-fabric-1.2.0",
+  "version": "1.6-fabric-1.0.0",
   "name": "Cobblemon Unimplemented Items",
   "description": "Adds items that don't exist in Cobblemon yet",
-  "authors": [
-    "TimInc aka Timothy Metcalfe"
-  ],
+  "authors": ["TimInc aka Timothy Metcalfe"],
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
@@ -17,13 +15,11 @@
       }
     ]
   },
-  "mixins": [
-  ],
+  "mixins": [],
   "depends": {
-    "java": ">=17",
-    "minecraft": "1.20.1",
-    "fabric-language-kotlin": ">=1.9.3+kotlin.1.8.20",
+    "java": ">=21",
+    "minecraft": "1.21.1",
     "fabric": "*",
-    "cobblemon": ">=1.5.0 <=1.5.2"
+    "cobblemon": ">=1.6.0 <=1.7.0"
   }
 }

@@ -3,6 +3,7 @@ package us.timinc.mc.cobblemon.unimplementeditems
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.spawning.spawner.PlayerSpawnerFactory
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import us.timinc.mc.cobblemon.unimplementeditems.blocks.UnimplementedItemsBlocks
@@ -52,9 +53,13 @@ object UnimplementedItems : ModInitializer {
                 }
             }
         }
+
+        LootTableEvents.MODIFY.register { registryKey, builder, source, lookup ->
+            Loot.register(source, registryKey.value, builder)
+        }
     }
 
-    fun myResourceLocation(str: String): Identifier {
-        return Identifier(MOD_ID, str)
+    fun modIdentifier(str: String): Identifier {
+        return Identifier.of(MOD_ID, str)
     }
 }

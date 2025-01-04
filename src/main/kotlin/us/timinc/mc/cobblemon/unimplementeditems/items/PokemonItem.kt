@@ -2,7 +2,6 @@ package us.timinc.mc.cobblemon.unimplementeditems.items
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
@@ -13,13 +12,13 @@ import net.minecraft.util.Hand
 import us.timinc.mc.cobblemon.unimplementeditems.ErrorMessages
 import us.timinc.mc.cobblemon.unimplementeditems.util.Ownership
 
-abstract class PokemonItem(settings: FabricItemSettings) : Item(settings) {
+abstract class PokemonItem(settings: Settings) : Item(settings) {
     override fun useOnEntity(
         itemStack: ItemStack,
         player: PlayerEntity,
         target: LivingEntity,
-        hand: Hand
-    ): ActionResult  {
+        hand: Hand,
+    ): ActionResult {
         if (player.world.isClient) {
             return ActionResult.PASS
         }
@@ -48,6 +47,6 @@ abstract class PokemonItem(settings: FabricItemSettings) : Item(settings) {
         itemStack: ItemStack,
         player: PlayerEntity,
         target: PokemonEntity,
-        pokemon: Pokemon
+        pokemon: Pokemon,
     ): ActionResult
 }

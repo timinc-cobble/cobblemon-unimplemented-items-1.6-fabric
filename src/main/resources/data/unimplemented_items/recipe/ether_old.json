@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:elixir"
+      "item": "unimplemented_items:ether"
     }
   ],
   "result": {
-    "item": "cobblemon:elixir",
+    "id": "cobblemon:ether",
     "count": 1
   }
 }

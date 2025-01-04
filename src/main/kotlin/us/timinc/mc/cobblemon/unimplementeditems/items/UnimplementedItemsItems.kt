@@ -4,21 +4,14 @@ package us.timinc.mc.cobblemon.unimplementeditems.items
 
 import com.cobblemon.mod.common.api.pokemon.stats.Stats
 import com.cobblemon.mod.common.item.group.CobblemonItemGroups
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents
-import net.fabricmc.fabric.api.loot.v2.LootTableSource
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
 import net.fabricmc.fabric.api.registry.FuelRegistry
 import net.minecraft.item.Item
+import net.minecraft.item.Item.Settings
 import net.minecraft.item.ItemGroups
-import net.minecraft.loot.LootManager
-import net.minecraft.loot.LootTable
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
-import net.minecraft.resource.ResourceManager
-import net.minecraft.util.Identifier
-import us.timinc.mc.cobblemon.unimplementeditems.Loot
 import us.timinc.mc.cobblemon.unimplementeditems.UnimplementedItems
 
 object UnimplementedItemsItems {
@@ -28,29 +21,25 @@ object UnimplementedItemsItems {
     val BOTTLE_CAP_SD = BottleCap(Stats.SPECIAL_DEFENCE)
     val BOTTLE_CAP_SPD = BottleCap(Stats.SPEED)
     val BOTTLE_CAP_HP = BottleCap(Stats.HP)
-    val BOTTLE_CAP = Item(FabricItemSettings().maxCount(16))
+    val BOTTLE_CAP = Item(Settings().maxCount(16))
     val BOTTLE_CAP_GOLD = BottleCap(null)
-    val POTION = Item(FabricItemSettings())
-    val POTION_HYPER = Item(FabricItemSettings())
-    val POTION_MAX = Item(FabricItemSettings())
-    val ELIXIR = Item(FabricItemSettings())
-    val ETHER = Item(FabricItemSettings())
+    val POTION = Item(Settings())
+    val POTION_HYPER = Item(Settings())
+    val POTION_MAX = Item(Settings())
+    val ELIXIR = Item(Settings())
+    val ETHER = Item(Settings())
     val DRY_ROOT = DryRoot()
-    val POWER_WEIGHT = Item(FabricItemSettings())
-    val POWER_BRACER = Item(FabricItemSettings())
-    val POWER_BELT = Item(FabricItemSettings())
-    val POWER_LENS = Item(FabricItemSettings())
-    val POWER_BAND = Item(FabricItemSettings())
-    val POWER_ANKLET = Item(FabricItemSettings())
+    val POWER_WEIGHT = Item(Settings())
+    val POWER_BRACER = Item(Settings())
+    val POWER_BELT = Item(Settings())
+    val POWER_LENS = Item(Settings())
+    val POWER_BAND = Item(Settings())
+    val POWER_ANKLET = Item(Settings())
     val ABILITY_PATCH = AbilityPatch()
-    val ABILITY_CAPSULE = Item(FabricItemSettings())
-    val SHINY_CHARM = Item(FabricItemSettings())
+    val ABILITY_CAPSULE = Item(Settings())
+    val SHINY_CHARM = Item(Settings())
 
     fun register() {
-        LootTableEvents.MODIFY.register(LootTableEvents.Modify { _: ResourceManager, _: LootManager, id: Identifier, tableBuilder: LootTable.Builder, source: LootTableSource ->
-            Loot.register(source, id, tableBuilder)
-        })
-
         ItemGroupEvents.modifyEntriesEvent(CobblemonItemGroups.CONSUMABLES_KEY).register { content ->
             content.add(BOTTLE_CAP_ATK)
             content.add(BOTTLE_CAP_DEF)
@@ -63,11 +52,11 @@ object UnimplementedItemsItems {
             content.add(ABILITY_CAPSULE)
         }
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register{ content ->
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register { content ->
             content.add(BOTTLE_CAP)
         }
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register{ content ->
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register { content ->
             content.add(POTION)
             content.add(POTION_HYPER)
             content.add(POTION_MAX)
@@ -84,54 +73,54 @@ object UnimplementedItemsItems {
         }
 
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_atk"), BOTTLE_CAP_ATK
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_atk"), BOTTLE_CAP_ATK
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_def"), BOTTLE_CAP_DEF
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_def"), BOTTLE_CAP_DEF
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_sa"), BOTTLE_CAP_SA
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_sa"), BOTTLE_CAP_SA
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_sd"), BOTTLE_CAP_SD
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_sd"), BOTTLE_CAP_SD
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_spd"), BOTTLE_CAP_SPD
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_spd"), BOTTLE_CAP_SPD
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_hp"), BOTTLE_CAP_HP
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_hp"), BOTTLE_CAP_HP
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap"), BOTTLE_CAP
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap"), BOTTLE_CAP
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("bottle_cap_gold"), BOTTLE_CAP_GOLD
+            Registries.ITEM, UnimplementedItems.modIdentifier("bottle_cap_gold"), BOTTLE_CAP_GOLD
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("potion"), POTION
+            Registries.ITEM, UnimplementedItems.modIdentifier("potion"), POTION
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("potion_hyper"), POTION_HYPER
+            Registries.ITEM, UnimplementedItems.modIdentifier("potion_hyper"), POTION_HYPER
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("potion_max"), POTION_MAX
+            Registries.ITEM, UnimplementedItems.modIdentifier("potion_max"), POTION_MAX
         )
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("ether"), ETHER)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("ether"), ETHER)
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("elixir"), ELIXIR
+            Registries.ITEM, UnimplementedItems.modIdentifier("elixir"), ELIXIR
         )
         Registry.register(
-            Registries.ITEM, UnimplementedItems.myResourceLocation("dry_root"), DRY_ROOT
+            Registries.ITEM, UnimplementedItems.modIdentifier("dry_root"), DRY_ROOT
         )
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_weight"), POWER_WEIGHT)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_bracer"), POWER_BRACER)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_belt"), POWER_BELT)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_lens"), POWER_LENS)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_band"), POWER_BAND)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("power_anklet"), POWER_ANKLET)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("ability_patch"), ABILITY_PATCH)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("ability_capsule"), ABILITY_CAPSULE)
-        Registry.register(Registries.ITEM, UnimplementedItems.myResourceLocation("shiny_charm"), SHINY_CHARM)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("power_weight"), POWER_WEIGHT)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("power_bracer"), POWER_BRACER)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("power_belt"), POWER_BELT)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("power_lens"), POWER_LENS)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("power_band"), POWER_BAND)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("power_anklet"), POWER_ANKLET)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("ability_patch"), ABILITY_PATCH)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("ability_capsule"), ABILITY_CAPSULE)
+        Registry.register(Registries.ITEM, UnimplementedItems.modIdentifier("shiny_charm"), SHINY_CHARM)
 
         FuelRegistry.INSTANCE.add(DRY_ROOT, 100)
         CompostingChanceRegistry.INSTANCE.add(DRY_ROOT, 0.3F)

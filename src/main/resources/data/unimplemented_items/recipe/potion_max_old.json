@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:power_bracer"
+      "item": "unimplemented_items:potion_max"
     }
   ],
   "result": {
-    "item": "cobblemon:power_bracer",
+    "id": "cobblemon:max_potion",
     "count": 1
   }
 }

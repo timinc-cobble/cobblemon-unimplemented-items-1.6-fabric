@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:potion"
+      "item": "unimplemented_items:power_bracer"
     }
   ],
   "result": {
-    "item": "cobblemon:potion",
+    "id": "cobblemon:power_bracer",
     "count": 1
   }
 }

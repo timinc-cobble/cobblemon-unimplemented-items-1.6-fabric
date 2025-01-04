@@ -7,8 +7,10 @@ import net.minecraft.util.Identifier
 class UnimplementedItemsConfig {
     val abilityPatchGen9: Boolean = true
     val lootPoolOverrides: List<Identifier> = listOf(
-        LootTables.FISHING_TREASURE_GAMEPLAY,
-        Blocks.GRASS.lootTableId
+        LootTables.FISHING_TREASURE_GAMEPLAY.value,
+        Blocks.TALL_GRASS.lootTableKey.value,
+        Blocks.SHORT_GRASS.lootTableKey.value,
+        Blocks.FERN.lootTableKey.value
     )
     val shinyCharmBonusRolls: Int = 2
 }

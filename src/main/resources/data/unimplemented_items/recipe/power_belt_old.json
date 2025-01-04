@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:ability_capsule"
+      "item": "unimplemented_items:power_belt"
     }
   ],
   "result": {
-    "item": "cobblemon:ability_capsule",
+    "id": "cobblemon:power_belt",
     "count": 1
   }
 }

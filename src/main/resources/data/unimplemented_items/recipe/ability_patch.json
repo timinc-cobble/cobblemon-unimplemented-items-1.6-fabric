@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:potion_max"
+      "item": "cobblemon:ability_patch"
     }
   ],
   "result": {
-    "item": "cobblemon:max_potion",
+    "id": "unimplemented_items:ability_patch",
     "count": 1
   }
 }

@@ -5,11 +5,11 @@
             "item": "unimplemented_items:bottle_cap"
         },
         {
-            "item": "cobblemon:blue_apricorn"
+            "item": "cobblemon:black_apricorn"
         }
     ],
     "result": {
-        "item": "unimplemented_items:bottle_cap_sa",
+        "id": "unimplemented_items:bottle_cap_atk",
         "count": 1
     },
     "group": "bottle_cap"

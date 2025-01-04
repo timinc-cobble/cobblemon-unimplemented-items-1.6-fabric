@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "unimplemented_items:ether"
+      "item": "unimplemented_items:power_anklet"
     }
   ],
   "result": {
-    "item": "cobblemon:ether",
+    "id": "cobblemon:power_anklet",
     "count": 1
   }
 }

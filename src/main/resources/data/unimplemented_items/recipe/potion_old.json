@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unimplemented_items:potion"
+    }
+  ],
+  "result": {
+    "id": "cobblemon:potion",
+    "count": 1
+  }
+}
