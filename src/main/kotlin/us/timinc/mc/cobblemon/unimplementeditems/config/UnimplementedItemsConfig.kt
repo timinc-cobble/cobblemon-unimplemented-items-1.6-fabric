@@ -1,16 +1,16 @@
 package us.timinc.mc.cobblemon.unimplementeditems.config
 
-import net.minecraft.block.Blocks
-import net.minecraft.loot.LootTables
-import net.minecraft.util.Identifier
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.storage.loot.BuiltInLootTables
 
 class UnimplementedItemsConfig {
     val abilityPatchGen9: Boolean = true
-    val lootPoolOverrides: List<Identifier> = listOf(
-        LootTables.FISHING_TREASURE_GAMEPLAY.value,
-        Blocks.TALL_GRASS.lootTableKey.value,
-        Blocks.SHORT_GRASS.lootTableKey.value,
-        Blocks.FERN.lootTableKey.value
+    val lootPoolOverrides: List<ResourceLocation> = listOf(
+        BuiltInLootTables.FISHING_TREASURE.location(),
+        Blocks.TALL_GRASS.lootTable.location(),
+        Blocks.SHORT_GRASS.lootTable.location(),
+        Blocks.FERN.lootTable.location()
     )
     val shinyCharmBonusRolls: Int = 2
 }

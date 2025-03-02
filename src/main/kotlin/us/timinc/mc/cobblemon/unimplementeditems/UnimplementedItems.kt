@@ -4,8 +4,8 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.spawning.spawner.PlayerSpawnerFactory
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents
-import net.minecraft.util.Identifier
-import net.minecraft.util.math.BlockPos
+import net.minecraft.core.BlockPos
+import net.minecraft.resources.ResourceLocation
 import us.timinc.mc.cobblemon.unimplementeditems.blocks.UnimplementedItemsBlocks
 import us.timinc.mc.cobblemon.unimplementeditems.blocks.UnimplementedItemsBlocks.REPEL
 import us.timinc.mc.cobblemon.unimplementeditems.config.ConfigBuilder
@@ -28,13 +28,13 @@ object UnimplementedItems : ModInitializer {
             val spawned = event.entity
             if (!spawned.pokemon.isWild()) return@subscribe
 
-            val spawnedWorld = spawned.world
-            val spawnedPos = spawned.pos
+            val spawnedWorld = spawned.level()
+            val spawnedPos = spawned.position()
             for (xOff in -10..10) {
                 for (yOff in -10..10) {
                     for (zOff in -10..10) {
                         val pos = spawnedPos.add(xOff.toDouble(), yOff.toDouble(), zOff.toDouble())
-                        if (spawnedWorld.getBlockState(BlockPos.ofFloored(pos)).isOf(REPEL)) {
+                        if (spawnedWorld.getBlockState(BlockPos.containing(pos)).`is`(REPEL)) {
                             event.cancel()
                         }
                     }
@@ -54,12 +54,12 @@ object UnimplementedItems : ModInitializer {
             }
         }
 
-        LootTableEvents.MODIFY.register { registryKey, builder, source, lookup ->
-            Loot.register(source, registryKey.value, builder)
+        LootTableEvents.MODIFY.register { registryKey, builder, source, _ ->
+            Loot.register(source, registryKey, builder)
         }
     }
 
-    fun modIdentifier(str: String): Identifier {
-        return Identifier.of(MOD_ID, str)
+    fun modIdentifier(str: String): ResourceLocation {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, str)
     }
 }

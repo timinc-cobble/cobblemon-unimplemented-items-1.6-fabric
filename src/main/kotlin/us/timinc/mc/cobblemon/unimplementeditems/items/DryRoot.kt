@@ -2,21 +2,22 @@ package us.timinc.mc.cobblemon.unimplementeditems.items
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
-import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.item.ItemStack
-import net.minecraft.text.Text
-import net.minecraft.util.ActionResult
+import net.minecraft.network.chat.Component
+import net.minecraft.world.InteractionResult
+import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
 import us.timinc.mc.cobblemon.unimplementeditems.ErrorMessages
 
 class DryRoot : PokemonItem(
-    Settings()
+    Item.Properties()
 ) {
     override fun processInteraction(
         itemStack: ItemStack,
-        player: PlayerEntity,
+        player: Player,
         target: PokemonEntity,
         pokemon: Pokemon,
-    ): ActionResult {
+    ): InteractionResult {
         var changedOne = false
         pokemon.evs.forEach { entry ->
             if (entry.value > .0) {
@@ -26,11 +27,11 @@ class DryRoot : PokemonItem(
         }
 
         if (!changedOne) {
-            player.sendMessage(Text.translatable(ErrorMessages.alreadyHasZeroEvs))
-            return ActionResult.FAIL
+            player.sendSystemMessage(Component.translatable(ErrorMessages.alreadyHasZeroEvs))
+            return InteractionResult.FAIL
         }
 
         itemStack.count--
-        return ActionResult.SUCCESS
+        return InteractionResult.SUCCESS
     }
 }
