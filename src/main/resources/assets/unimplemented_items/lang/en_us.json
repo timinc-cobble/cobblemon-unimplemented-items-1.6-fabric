@@ -6,7 +6,7 @@
   "unimplemented_items.errors.alreadyPerfectIvs": "That Pokemon already has perfect IVs.",
   "unimplemented_items.errors.alreadyHasZeroEvs": "That Pokemon has no effort to take away.",
   "item.unimplemented_items.ability_capsule": "Ability Capsule (old)",
-  "item.unimplemented_items.ability_patch": "Ability Patch (old)",
+  "item.unimplemented_items.ability_patch": "Ability Patch",
   "item.unimplemented_items.bottle_cap_hp": "Bottle Cap (HP)",
   "item.unimplemented_items.bottle_cap_atk": "Bottle Cap (Attack)",
   "item.unimplemented_items.bottle_cap_def": "Bottle Cap (Defense)",
