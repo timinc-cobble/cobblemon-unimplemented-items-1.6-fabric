@@ -17,7 +17,7 @@ class AbilityPatch : PokemonItem(
         itemStack: ItemStack, player: PlayerEntity, target: PokemonEntity, pokemon: Pokemon,
     ): ActionResult {
         // Pre-Gen9, if you already had your hidden, it had no effect.
-        val preGen9 = !UnimplementedItems.config.abilityPatchGen9;
+        val preGen9 = !UnimplementedItems.config.abilityPatchGen9
 
         // It has its hidden if the priority is Low.
         val hasHidden = pokemon.ability.priority == Priority.LOW

@@ -9,10 +9,10 @@ import net.minecraft.item.ItemStack
 import net.minecraft.text.Text
 import net.minecraft.util.ActionResult
 import us.timinc.mc.cobblemon.unimplementeditems.ErrorMessages
+import us.timinc.mc.cobblemon.unimplementeditems.UnimplementedItems
 
 class BottleCap(private val stat: Stat?) : PokemonItem(
-    Settings()
-        .maxCount(16)
+    Settings().maxCount(16)
 ) {
     override fun processInteraction(
         itemStack: ItemStack,
@@ -20,6 +20,8 @@ class BottleCap(private val stat: Stat?) : PokemonItem(
         target: PokemonEntity,
         pokemon: Pokemon,
     ): ActionResult {
+        if (UnimplementedItems.config.bottleCapBlacklist.any { it.matches(pokemon) }) return ActionResult.FAIL
+
         if (stat == null) {
             val nonPerfectIvs = pokemon.ivs.filter { it.value != IVs.MAX_VALUE }
             if (nonPerfectIvs.isEmpty()) {

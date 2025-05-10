@@ -3,6 +3,7 @@ package us.timinc.mc.cobblemon.unimplementeditems.config
 import net.minecraft.block.Blocks
 import net.minecraft.loot.LootTables
 import net.minecraft.util.Identifier
+import us.timinc.mc.cobblemon.unimplementeditems.util.cobblemon.Pokematcher
 
 class UnimplementedItemsConfig {
     val abilityPatchGen9: Boolean = true
@@ -13,4 +14,5 @@ class UnimplementedItemsConfig {
         Blocks.FERN.lootTableKey.value
     )
     val shinyCharmBonusRolls: Int = 2
+    val bottleCapBlacklist: List<Pokematcher> = listOf()
 }
