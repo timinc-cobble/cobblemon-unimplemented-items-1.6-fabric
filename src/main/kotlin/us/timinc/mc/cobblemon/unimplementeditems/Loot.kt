@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier
 
 object Loot {
     fun register(source: LootTableSource, id: Identifier, tableBuilder: LootTable.Builder) {
-        if (source.isBuiltin && UnimplementedItems.config.lootPoolOverrides.contains(id)) {
+        if (UnimplementedItems.config.lootPoolOverrides.contains(id)) {
             println(id.path)
             val pool = LootPool.builder()
                 .with(
