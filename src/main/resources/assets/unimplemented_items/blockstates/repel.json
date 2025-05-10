@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "unimplemented_items:block/repel" }
+    "": {
+      "model": "unimplemented_items:block/repel"
+    }
   }
 }
